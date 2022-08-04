@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+body,
+html {
+  height: 100vh;
+  line-height: 1.5;
+  font-family: Poppins, sans-serif;
+}
+
+:root {
+  --primary-900: #d79600;
+  --secondary-900: #1e1e1e;
+
+  --neutral-100: #737380;
+  --neutral-900: #a8a8b3;
+
+  --white: #fff;
+}
