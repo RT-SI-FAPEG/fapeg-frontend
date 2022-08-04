@@ -11,15 +11,15 @@
         class="logo"
       />
 
-      <form>
+      <form [formGroup]="loginForm" (submit)="onSubmit()">
         <label class="input_container">
           Usuário
-          <input type="text" />
+          <input type="text" formControlName="user"/>
         </label>
 
         <label class="input_container">
           Senha
-          <input type="text" />
+          <input type="text" formControlName="password"/>
         </label>
 
         <button class="button" type="submit">Entrar</button>
