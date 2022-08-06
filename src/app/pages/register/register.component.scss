@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+}
+
+.container {
+    background-color: #1E1E1E;
+    height: 100vh;
+    width: 100vw;
+
+    h1 {
+        padding: 1rem;
+        margin-left: 200px;
+        color: white;
+    }
+
+    .register-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        .register-form {
+            width: 860px;
+            height: 500px;
+            background-color: #FFFFFF !important;
+            border-radius: 30px;
+        }
+    }
+}
