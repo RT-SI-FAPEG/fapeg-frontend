@@ -10,6 +10,7 @@ input,
 textarea,
 button {
   font-family: inherit;
+  line-height: inherit;
 }
 
 body,
@@ -27,4 +28,35 @@ html {
   --neutral-900: #a8a8b3;
 
   --white: #fff;
+}
+
+.input_container {
+  color: var(--neutral-900);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  input {
+    height: 3.125rem;
+    width: 100%;
+    padding: 1rem;
+
+    border: 1px solid var(--neutral-900);
+    border-radius: 8px;
+  }
+}
+
+.button {
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--primary-900);
+  border: 0;
+  cursor: pointer;
+  height: 3.125rem;
+  font-weight: 600;
+  transition: filter 0.3s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 }
