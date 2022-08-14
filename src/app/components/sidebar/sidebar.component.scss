@@ -1,0 +1,85 @@
+.sidebar {
+    height: 100vh;
+    width: 300px;
+    background-color: var(--primary-900);
+    padding: 6px 14px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.sidebar .logo {
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    color: #fff;
+}
+
+.sidebar ul {
+    margin-bottom: 50%;
+    list-style: none;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 16px 15px;
+    list-style: none;
+    line-height: 50px;
+    color: #fff;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.sidebar ul li .link_name {
+    margin-left: 20px;
+}
+
+.sidebar ul li .material-icons {
+    font-size: 35px !important;
+}
+
+.sidebar ul li a:hover {
+    background-color: #DEA92F;
+}
+
+.sidebar .profile_content {
+    margin-bottom: 80px;
+}
+
+.sidebar .profile {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .profile_icon {
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    background-color: #DEA92F;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .profile_icon span {
+    font-size: 35px !important;
+}
+
+.sidebar .profile_links {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
