@@ -10,9 +10,11 @@ import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent],
+  declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent, SidebarComponent, MainLayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
