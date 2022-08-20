@@ -10,12 +10,14 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
+  loading: boolean = false
+
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService
   ) {
     this.loginForm = this.formBuilder.group({
-      user: [null, Validators.required],
+      email: [null, Validators.required],
       password: [null, Validators.required],
     });
   }
@@ -23,12 +25,20 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    const { user, password } = this.loginForm.value;
+    const { email, password } = this.loginForm.value;
 
-    console.log({ user, password });
+    console.log({ email, password });
 
-    // this.loginService.auth({ user, password }).subscribe((response) => {
-    //   console.log(response);
-    // });
+    this.loading = true
+    this.loginService.auth({ email, password }).subscribe(
+      (response) => {
+        console.log(response)
+        this.loading = false
+      },
+      (err) => {
+        console.log(err)
+        this.loading = false
+      }
+    );
   }
 }

@@ -2,55 +2,79 @@
   <div class="cuca">
     <h1>Observatório da FAPEG</h1>
       <div class="register-container">
-        <form *ngIf="makingRegister; else registerConfirm" (submit)="onSubmit()">
-          <div class="container-type-person">
-            <label>
-              <input type="radio" name="type-person" />
-              Pessoa física
-            </label>
-    
-            <label>
-              <input type="radio" name="type-person" />
-              Pessoa jurídica
-            </label>
-          </div>
+        <form [formGroup]="registerForm" *ngIf="makingRegister; else registerConfirm" (submit)="onSubmit()">
     
           <div class="container-inputs">
             <label class="input_container">
-              Nome completo
-              <input type="text"/>
+              Nome Completo
+              <input formControlName="name" type="text" placeholder="Seu nome completo"/>
+            </label>
+    
+            <label class="input_container">
+              Data de Nascimento
+              <input formControlName="birthDate" type="date"/>
             </label>
     
             <label class="input_container">
               Email
-              <input type="email"/>
+              <input formControlName="email" type="text" placeholder="seu_email@mail.com"/>
             </label>
     
             <label class="input_container">
               CPF
-              <input type="text"/>
+              <input formControlName="document" mask="000.000.000-00" type="text" placeholder="001.001.001-01"/>
             </label>
-    
+
             <label class="input_container">
-              Data de nascimento
-              <input type="date"/>
+              Grau de Instrução
+              <select formControlName="educationLevel" name="schooling" id="schooling">
+                <option value="Superior Completo">Superior Completo</option>
+                <option value="Superior Incompleto">Superior Incompleto</option>
+                <option value="Pós-Graduação">Pós-Graduação</option>
+                <option value="Mestrado">Mestrado</option>
+                <option value="Doutorado">Doutorado</option>
+              </select>
+            </label>
+
+            <label class="input_container">
+              Intituição de Ensino
+              <input formControlName="educationalInstitution" type="text" placeholder="Universidade Federal de Goiás"/>
+            </label>
+
+           <label class="input_container">
+              Curso
+              <input formControlName="course" type="text" placeholder="Administração"/>
             </label>
     
             <label class="input_container">
               Senha
-              <input type="password"/>
+              <input formControlName="password" type="password" placeholder="********"/>
             </label>
-    
+
             <label class="input_container">
-              Área de interesse
-              <input type="text"/>
+              Confirme a Senha
+              <input formControlName="passwordConfirmation" type="password" placeholder="********"/>
             </label>
+
+            <div class="container-type-person">
+              <label>
+                <input formControlName="typePerson" value="1" type="radio" name="typePerson" />
+                Pesquisador
+              </label>
+      
+              <label>
+                <input formControlName="typePerson" value="2" type="radio" name="typePerson" />
+                Empreendedor
+              </label>
+            </div>
+    
           </div>
     
           <div class="container-button">
-            <button class="button" type="submit">Cadastrar</button>
+            <button [disabled]="loading" class="button" type="submit">Cadastrar</button>
           </div>
         </form>
+
         <ng-template #registerConfirm>
           <h3>Confirmação de Cadastro</h3>
           <div class="confirmRegisterText">

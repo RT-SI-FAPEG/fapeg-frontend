@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/models/user';
+import { UserService } from '../../services/user.service'
 
 @Component({
   selector: 'app-register',
@@ -8,19 +10,26 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  legalPersonForm: FormGroup
-  physicalPersonForm: FormGroup
+  registerForm: FormGroup
   makingRegister: boolean = true
+  passwordConfirmation: string = ''
+  loading: boolean = false
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserService
   ) {
-    this.legalPersonForm = this.formBuilder.group({
-
-    })
-
-    this.physicalPersonForm = this.formBuilder.group({
-      
+    this.registerForm = this.formBuilder.group({
+      name: [null, Validators.required],
+      birthDate: [null, Validators.required],
+      email: [null, Validators.required],
+      document: [null, Validators.required],
+      password: [null, Validators.required],
+      educationLevel: [null],
+      educationalInstitution: [null],
+      course: [null],
+      typePerson: [null, Validators.required],
+      passwordConfirmation: [null, Validators.required]
     })
   }
 
@@ -28,7 +37,39 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.makingRegister = false
+    const { 
+      name,
+      email,
+      password,
+      passwordConfirmation,
+      document,
+      birthDate,
+      interestArea,
+      typePerson,
+      educationLevel,
+      course,
+      educationalInstitution
+    } = this.registerForm.value
+
+    if(password !== passwordConfirmation) {
+      alert('As senhas não coincidem.')
+      return
+    }
+    this.loading = true
+    this.userService.createUser({ name, email, password, document, birthDate, interestArea, typePerson, educationLevel, course, educationalInstitution})
+      .subscribe(
+        () => {
+          this.loading = false
+          this.makingRegister = false
+        },
+        (err) => {
+          console.log(err)
+          if(err.error) {
+            alert(err.error.error)
+          }
+          this.loading = false
+        }
+      )
   }
 
 }

@@ -16,20 +16,27 @@ $gap: 30px;
     border-radius: 30px;
     padding: 2rem;
 
-    .container-type-person {
-      margin-bottom: 29px;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
     .container-inputs {
       display: flex;
       flex-wrap: wrap;
       gap: $gap;
 
       .input_container {
-        flex: 1 0 46%;
+        flex:  0 46%;
+        color: #1e1e1e !important;
+
+        select {
+          padding: 15px;
+          border-radius: 10px;
+          border: 1px solid var(--neutral-900);
+          color: var(--neutral-900);
+        }
+      }
+
+      .container-type-person {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
       }
 
       @media (max-width: 768px) {

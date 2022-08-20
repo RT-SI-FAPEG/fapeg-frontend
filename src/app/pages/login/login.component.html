@@ -14,15 +14,15 @@
       <form [formGroup]="loginForm" (submit)="onSubmit()">
         <label class="input_container">
           Usuário
-          <input type="text" formControlName="user"/>
+          <input type="text" formControlName="email"/>
         </label>
 
         <label class="input_container">
           Senha
-          <input type="text" formControlName="password"/>
+          <input type="password" formControlName="password"/>
         </label>
 
-        <button class="button" type="submit">Entrar</button>
+        <button [disabled]="loading" class="button" type="submit">Entrar</button>
 
         <div>
           <span class="password_link"

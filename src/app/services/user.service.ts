@@ -12,10 +12,10 @@ export class UserService {
   constructor(private httpClient: HttpClient) {}
 
   getUsers() {
-    return this.httpClient.get(`${this.apiURL}/users`);
+    return this.httpClient.get(`${this.apiURL}/user`);
   }
 
   createUser(data: User) {
-    return this.httpClient.post(`${this.apiURL}/users`, data);
+    return this.httpClient.post(`${this.apiURL}/user`, data);
   }
 }

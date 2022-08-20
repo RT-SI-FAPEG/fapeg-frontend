@@ -4,7 +4,10 @@ export interface User {
   email: string;
   password: string;
   document: string;
-  birthDate?: Date;
+  birthDate: Date;
   interestArea: string;
   typePerson: number;
+  educationLevel?: string,
+  course?: string,
+  educationalInstitution?: string
 }

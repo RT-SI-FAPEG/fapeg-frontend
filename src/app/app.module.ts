@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { NgxMaskModule } from 'ngx-mask'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { RegisterComponent } from './pages/register/register.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [LoginService, UserService],
   bootstrap: [AppComponent],
