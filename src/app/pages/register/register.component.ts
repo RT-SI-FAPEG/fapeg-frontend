@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   makingRegister: boolean = true
   passwordConfirmation: string = ''
   loading: boolean = false
+  userEmail: string = ''
 
   constructor(
     private formBuilder: FormBuilder,
@@ -50,6 +51,8 @@ export class RegisterComponent implements OnInit {
       course,
       educationalInstitution
     } = this.registerForm.value
+
+    this.userEmail = email
 
     if(password !== passwordConfirmation) {
       alert('As senhas não coincidem.')
