@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   loading: boolean = false
+  showPassword: boolean = false
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,5 +41,9 @@ export class LoginComponent implements OnInit {
         this.loading = false
       }
     );
+  }
+
+  passwordVisibility() {
+    this.showPassword = !this.showPassword
   }
 }

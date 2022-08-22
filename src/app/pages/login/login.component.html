@@ -19,7 +19,10 @@
 
         <label class="input_container">
           Senha
-          <input type="password" formControlName="password"/>
+          <div class="input_div">
+            <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password"/>
+            <button (click)="passwordVisibility()" type="button"><span class="material-icons"> visibility </span></button>
+          </div>
         </label>
 
         <button [disabled]="loading" class="button" type="submit">Entrar</button>
@@ -29,7 +32,7 @@
             >Esqueceu a senha? <a routerLink="/forgetPassword">Clique aqui</a></span
           >
           <span class="password_link"
-            >Não tem conta? <a href="#">Cadastre-se aqui</a></span
+            >Não tem conta? <a routerLink="">Cadastre-se aqui</a></span
           >
         </div>
       </form>
