@@ -1,6 +1,10 @@
+.main-layout {
+  display: flex;
+}
+
 .pages {
     flex: 1;
     overflow: auto;
     height: 100vh;
+    background-color: #1E1E1E;
   }
-  

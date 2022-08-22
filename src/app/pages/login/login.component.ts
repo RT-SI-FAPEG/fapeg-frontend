@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -10,12 +11,13 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  loading: boolean = false
-  showPassword: boolean = false
+  loading: boolean = false;
+  showPassword: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
       email: [null, Validators.required],
@@ -28,22 +30,20 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const { email, password } = this.loginForm.value;
 
-    console.log({ email, password });
-
-    this.loading = true
+    this.loading = true;
     this.loginService.auth({ email, password }).subscribe(
       (response) => {
-        console.log(response)
-        this.loading = false
+        console.log(response);
+        this.loading = false;
+        this.router.navigate(['/main']);
       },
       (err) => {
-        console.log(err)
-        this.loading = false
+        this.loading = false;
       }
     );
   }
 
   passwordVisibility() {
-    this.showPassword = !this.showPassword
+    this.showPassword = !this.showPassword;
   }
 }
