@@ -16,9 +16,12 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SearchesService } from './services/seachs.service';
+import { SearchsComponent } from './pages/searchs/searchs.component';
+import { IndicatorsService } from './services/indicators.service';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent, SidebarComponent, MainLayoutComponent, RegisterComponent, LoginComponent, DashboardComponent],
+  declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent, SidebarComponent, MainLayoutComponent, RegisterComponent, LoginComponent, DashboardComponent, SearchsComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -28,7 +31,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     HttpClientModule,
     NgxMaskModule.forRoot()
   ],
-  providers: [LoginService, UserService],
+  providers: [LoginService, UserService, SearchesService, IndicatorsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

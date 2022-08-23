@@ -1,0 +1,37 @@
+.searchs-container {
+    max-width: 917px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+
+    .searchs-list {
+
+    }
+
+    .list-card {
+        padding: 1.5rem 2rem;
+        background-color: #fff;
+        border-radius: 12px;
+        margin-top: 22px;
+        
+        h2 {
+            margin-bottom: 29px;
+        }
+
+        span {
+            color: #737380;
+            font-weight: 700;
+            font-size: 20px;
+
+            p {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.title {
+    margin-bottom: 1.5rem;
+    color: #A8A8B3;
+    font-size: 2rem;
+  }
