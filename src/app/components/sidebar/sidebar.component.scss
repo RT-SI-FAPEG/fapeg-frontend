@@ -83,6 +83,11 @@
     color: #fff;
 }
 
+.sidebar .profile_links a {
+    text-decoration: none;
+    color: #fff
+}
+
 @media (max-width: 763px) {
     .link_name {
         display: none;
