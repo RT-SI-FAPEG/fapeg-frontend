@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SearchesService } from 'src/app/services/seachs.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class SearchsComponent implements OnInit {
   searches: any[] = []
 
   constructor(
-    private seachsService: SearchesService
+    private seachsService: SearchesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +27,12 @@ export class SearchsComponent implements OnInit {
           console.log(err)
         }
       )
+  }
+
+  showSearchDetails(search: any) {
+    this.router.navigateByUrl('/seach', {
+      state: search
+    }) 
   }
 
 }

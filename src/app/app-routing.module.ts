@@ -6,6 +6,7 @@ import { ForgetPasswordComponent } from './pages/forget-password/forget-password
 import { LoginComponent } from './pages/login/login.component';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { SearchComponent } from './pages/search/search.component';
 import { SearchsComponent } from './pages/searchs/searchs.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'searches', component: SearchsComponent }
+      { path: 'searches', component: SearchsComponent },
+      { path: 'seach', component: SearchComponent }
     ],
   },
   { path: 'login', component: LoginComponent },

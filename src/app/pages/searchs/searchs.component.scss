@@ -27,6 +27,13 @@
                 font-weight: 400;
             }
         }
+
+        .showDetails {
+            color: red;
+            border: none;
+            cursor: pointer;
+            background-color: #fff;
+        }
     }
 }
 
@@ -34,4 +41,4 @@
     margin-bottom: 1.5rem;
     color: #A8A8B3;
     font-size: 2rem;
-  }
+}

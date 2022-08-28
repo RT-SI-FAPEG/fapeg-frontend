@@ -1,0 +1,20 @@
+<div class="search-container">
+    <h1 class="title">Detalhes da Pesquisa</h1>
+    <div class="search-card">
+        <h2>{{ search.nme_titulo_projeto }}</h2>
+        <span>
+            Pesquisador: <span>{{ search.nme_pessoa_fisica }}</span> 
+        </span><br>
+        <span>
+            Programa de Fomento: <span>{{ search.nme_programa_fomento }}</span> 
+        </span><br>
+        <span>
+            Data de Submissão: <span>{{ search.dta_submissao | date:"dd/MM/yyyy" }}</span> 
+        </span><br>
+        <span>
+            Resumo:
+            <span>{{ search.nme_titulo_projeto }}</span>
+        </span>
+    </div>
+</div>
+
