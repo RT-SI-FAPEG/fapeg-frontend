@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://fapeg-backend.herokuapp.com'
+  apiURL: 'http://localhost:3333',
 };
 
 /*
