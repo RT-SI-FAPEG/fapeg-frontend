@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 interface IndicatorsData {
@@ -17,6 +17,10 @@ export class IndicatorsService {
   constructor(private httpClient: HttpClient) { }
 
   getIndicators() {
-    return this.httpClient.get<IndicatorsData[]>(`${this.apiURL}/indicators`)
+    return this.httpClient.get<IndicatorsData[]>(`${this.apiURL}/indicators`,
+      {
+        headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+      }
+    )
   }
 }

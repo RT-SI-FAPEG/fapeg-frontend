@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,6 +12,9 @@ export class SearchesService {
   constructor(private httpClient: HttpClient) { }
 
   getSearchs() {
-    return this.httpClient.get(`${this.apiURL}/searches`)
+    return this.httpClient.get(`${this.apiURL}/searches`,
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    })
   }
 }

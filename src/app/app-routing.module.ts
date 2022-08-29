@@ -8,12 +8,14 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchsComponent } from './pages/searchs/searchs.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: '',
     component: MainLayoutComponent,
+    canActivate: [AuthGuardService],
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'searches', component: SearchsComponent },
