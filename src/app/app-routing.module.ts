@@ -9,6 +9,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchsComponent } from './pages/searchs/searchs.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'searches', component: SearchsComponent },
-      { path: 'seach', component: SearchComponent }
+      { path: 'search', component: SearchComponent },
+      { path: 'user', component: UserComponent }
     ],
   },
   { path: 'login', component: LoginComponent },

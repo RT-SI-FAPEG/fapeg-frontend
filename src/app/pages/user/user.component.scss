@@ -1,0 +1,19 @@
+.container {
+    max-width: 917px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+
+    .user-container {
+        padding: 1.5rem 2rem;
+        background-color: #fff;
+        border-radius: 12px;
+        margin-top: 22px;
+    }
+
+    .title {
+        margin-bottom: 1.5rem;
+        color: #A8A8B3;
+        font-size: 2rem;
+    }
+}

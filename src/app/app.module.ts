@@ -21,9 +21,10 @@ import { SearchsComponent } from './pages/searchs/searchs.component';
 import { IndicatorsService } from './services/indicators.service';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { SearchComponent } from './pages/search/search.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent, SidebarComponent, MainLayoutComponent, RegisterComponent, LoginComponent, DashboardComponent, SearchsComponent, LogoutComponent, SearchComponent],
+  declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent, SidebarComponent, MainLayoutComponent, RegisterComponent, LoginComponent, DashboardComponent, SearchsComponent, LogoutComponent, SearchComponent, UserComponent],
   imports: [
     BrowserModule,
     CommonModule,

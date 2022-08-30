@@ -30,7 +30,7 @@ export class SearchsComponent implements OnInit {
   }
 
   showSearchDetails(search: any) {
-    this.router.navigateByUrl('/seach', {
+    this.router.navigateByUrl('/search', {
       state: search
     }) 
   }
