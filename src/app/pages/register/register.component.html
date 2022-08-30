@@ -71,7 +71,7 @@
           </div>
     
           <div class="container-button">
-            <button [disabled]="loading" class="button" type="submit">Cadastrar</button>
+            <button [disabled]="loading" class="button" type="submit">{{ loading ? 'Processando...' : 'Cadastrar'}}</button>
           </div>
         </form>
 

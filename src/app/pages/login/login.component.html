@@ -25,7 +25,7 @@
           </div>
         </label>
 
-        <button [disabled]="loading" class="button" type="submit">Entrar</button>
+        <button [disabled]="loading" class="button" type="submit">{{ loading ? 'Processando...' : 'Entrar' }}</button>
 
         <div>
           <span class="password_link"
