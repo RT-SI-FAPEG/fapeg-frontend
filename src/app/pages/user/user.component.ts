@@ -32,6 +32,7 @@ export class UserComponent implements OnInit {
     this.userService.getUser(localStorage.getItem('userId')!).subscribe(
       (user: User) => {
         this.user = user
+        console.log(user)
       }, (err) => {
         console.log(err)
       }
