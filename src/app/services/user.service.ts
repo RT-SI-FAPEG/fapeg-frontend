@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UpdateUserBody, User } from '../models/user';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +12,10 @@ export class UserService {
   constructor(private httpClient: HttpClient) {}
 
   getUser(id: string) {
-    return this.httpClient.get<User>(`${this.apiURL}/user/${id}`);
+    return this.httpClient.get<User>(`${this.apiURL}/user/${id}`,
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    });
   }
 
   createUser(data: User) {
@@ -20,6 +23,9 @@ export class UserService {
   }
 
   updateUser(data: UpdateUserBody) {
-    return this.httpClient.put(`${this.apiURL}/user`, data);
+    return this.httpClient.put(`${this.apiURL}/user`, data,
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    });
   }
 }
