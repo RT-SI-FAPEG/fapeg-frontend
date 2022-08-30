@@ -5,34 +5,27 @@ import { SearchesService } from 'src/app/services/seachs.service';
 @Component({
   selector: 'app-searchs',
   templateUrl: './searchs.component.html',
-  styleUrls: ['./searchs.component.scss']
+  styleUrls: ['./searchs.component.scss'],
 })
 export class SearchsComponent implements OnInit {
+  searches: any[] = [];
 
-  searches: any[] = []
-
-  constructor(
-    private seachsService: SearchesService,
-    private router: Router
-  ) { }
+  constructor(private seachsService: SearchesService, private router: Router) {}
 
   ngOnInit(): void {
-    this.seachsService.getSearchs()
-      .subscribe(
-        (searches: any) => {
-          console.log(searches)
-          this.searches = searches
-        },
-        (err) => {
-          console.log(err)
-        }
-      )
+    this.seachsService.getSearchs().subscribe(
+      (searches: any) => {
+        this.searches = searches.data;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   showSearchDetails(search: any) {
     this.router.navigateByUrl('/search', {
-      state: search
-    }) 
+      state: search,
+    });
   }
-
 }
