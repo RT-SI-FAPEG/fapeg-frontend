@@ -18,11 +18,12 @@ export class LoginService {
   constructor(private httpClient: HttpClient) {}
 
   auth(data: AuthProps) {
-    return this.httpClient.post<{ token: string }>(`${this.apiURL}/auth`, data)
+    return this.httpClient.post<{ token: string, id: string }>(`${this.apiURL}/auth`, data)
     .pipe(
-      tap((response: { token: string }) => {
+      tap((response: { token: string, id: string }) => {
         if(response.token) {
           localStorage.setItem('token', response.token)
+          localStorage.setItem('userId', response.id)
         }
       })
     )
