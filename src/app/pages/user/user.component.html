@@ -128,7 +128,7 @@
 
       <div class="container-button">
         <button [disabled]="loading" class="button" type="submit">
-          Salvar
+           {{ loading ? 'Processando...' : 'Salvar' }}
         </button>
       </div>
     </form>

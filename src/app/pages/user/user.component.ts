@@ -32,19 +32,51 @@ export class UserComponent implements OnInit {
     this.userService.getUser(localStorage.getItem('userId')!).subscribe(
       (user: User) => {
         this.user = user
-        console.log(user)
+        this.updateUserForm(user)
       }, (err) => {
         console.log(err)
       }
     )
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   onSubmit() {
-    
+    const {
+      name,
+      birthDate,
+      email,
+      document,
+      educationLevel,
+      educationalInstitution,
+      course,
+      typePerson
+    } = this.userForm.value
+
+    this.loading = true
+    this.userService.updateUser({
+      id: this.user!.id!, name, birthDate, email, document, educationLevel, educationalInstitution, course, typePerson
+    }).subscribe(
+      (updateUser) => {
+        this.loading = false
+        alert('Usuário atualizado com sucesso.')
+      },
+      (err) => {
+        this.loading = false
+        console.log(err)
+      }
+    )
+  }
+
+  updateUserForm(user: User) {
+    this.userForm.patchValue({ name: user.name })
+    this.userForm.patchValue({ birthDate: user.birthDate })
+    this.userForm.patchValue({ email: user.email })
+    this.userForm.patchValue({ document: user.document })
+    this.userForm.patchValue({ educationLevel: user.educationLevel })
+    this.userForm.patchValue({ educationalInstitution: user.educationalInstitution })
+    this.userForm.patchValue({ course: user.course })
+    this.userForm.patchValue({ typePerson: user.typePerson })
   }
 
 }
