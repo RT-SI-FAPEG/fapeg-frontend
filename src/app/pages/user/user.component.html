@@ -1,67 +1,136 @@
 <div class="container">
   <h1 class="title">Alterar Dados</h1>
-        <div class="user-container">
-            <form [formGroup]="userForm" (submit)="onSubmit()">
-                  <div class="container-inputs">
-                        <label class="input_container">
-                          Nome Completo
-                          <input formControlName="name" type="text" placeholder="Seu nome completo"/>
-                        </label>
+  <div class="user-container">
+    <form [formGroup]="userForm" (submit)="onSubmit()">
+      <div class="container-inputs">
+        <label class="input_container">
+          Nome Completo
+          <div class="input_container_wrapper">
+            <input
+              formControlName="name"
+              type="text"
+              placeholder="Seu nome completo"
+              class="input_element"
+            />
+          </div>
+        </label>
 
-                        <div class="container-type-person">
-                              <label>
-                                <input formControlName="typePerson" value="1" type="radio" name="typePerson" />
-                                Pesquisador
-                              </label>
-                      
-                              <label>
-                                <input formControlName="typePerson" value="2" type="radio" name="typePerson" />
-                                Empreendedor
-                              </label>
-                        </div>
-                
-                        <label class="input_container">
-                          Data de Nascimento
-                          <input formControlName="birthDate" type="date"/>
-                        </label>
-                
-                        <label class="input_container">
-                          Email
-                          <input formControlName="email" type="text" placeholder="seu_email@mail.com"/>
-                        </label>
-                
-                        <label class="input_container">
-                          CPF
-                          <input formControlName="document" mask="000.000.000-00" type="text" placeholder="001.001.001-01"/>
-                        </label>
-            
-                        <label class="input_container">
-                          Grau de Instrução
-                          <select formControlName="educationLevel" name="schooling" id="schooling">
-                            <option value="Superior Completo">Superior Completo</option>
-                            <option value="Superior Incompleto">Superior Incompleto</option>
-                            <option value="Pós-Graduação">Pós-Graduação</option>
-                            <option value="Mestrado">Mestrado</option>
-                            <option value="Doutorado">Doutorado</option>
-                          </select>
-                        </label>
-            
-                        <label class="input_container">
-                          Intituição de Ensino
-                          <input formControlName="educationalInstitution" type="text" placeholder="Universidade Federal de Goiás"/>
-                        </label>
-            
-                       <label class="input_container">
-                          Curso
-                          <input formControlName="course" type="text" placeholder="Administração"/>
-                        </label>
-                
-                  </div>
-                
-                  <div class="container-button">
-                        <button [disabled]="loading" class="button" type="submit">Salvar</button>
-                  </div>     
-            </form>
+        <div class="container-type-person">
+          <label>
+            <input
+              formControlName="typePerson"
+              value="1"
+              type="radio"
+              name="typePerson"
+            />
+            Pesquisador
+          </label>
+
+          <label>
+            <input
+              formControlName="typePerson"
+              value="2"
+              type="radio"
+              name="typePerson"
+            />
+            Empreendedor
+          </label>
+
+          <label>
+            <input
+              formControlName="typePerson"
+              value="3"
+              type="radio"
+              name="typePerson"
+            />
+            Outro
+          </label>
         </div>
+
+        <label class="input_container">
+          Data de Nascimento
+          <div class="input_container_wrapper">
+            <input
+              class="input_element"
+              formControlName="birthDate"
+              type="date"
+            />
+          </div>
+        </label>
+
+        <label class="input_container">
+          Email
+          <div class="input_container_wrapper">
+            <input
+              formControlName="email"
+              type="text"
+              placeholder="seu_email@mail.com"
+              class="input_element"
+            />
+          </div>
+        </label>
+
+        <label class="input_container">
+          CPF
+          <div class="input_container_wrapper">
+            <input
+              formControlName="document"
+              mask="000.000.000-00"
+              type="text"
+              placeholder="001.001.001-01"
+              class="input_element"
+            />
+          </div>
+        </label>
+
+        <label class="input_container">
+          Grau de Instrução
+          <div class="input_container_wrapper">
+            <select
+              formControlName="educationLevel"
+              name="schooling"
+              id="schooling"
+              class="input_element"
+            >
+              <option value="Superior Completo">Superior Completo</option>
+              <option value="Superior Incompleto">Superior Incompleto</option>
+              <option value="Pós-Graduação">Pós-Graduação</option>
+              <option value="Mestrado">Mestrado</option>
+              <option value="Doutorado">Doutorado</option>
+            </select>
+          </div>
+        </label>
+
+        <label class="input_container">
+          Intituição de Ensino
+          <div class="input_container_wrapper">
+            <input
+              formControlName="educationalInstitution"
+              type="text"
+              placeholder="Universidade Federal de Goiás"
+              class="input_element"
+            />
+          </div>
+        </label>
+
+        <label class="input_container">
+          Curso
+          <div class="input_container_wrapper">
+            <input
+              formControlName="course"
+              type="text"
+              placeholder="Administração"
+              class="input_element"
+            />
+          </div>
+        </label>
+      </div>
+
+      <div class="container-button">
+        <button [disabled]="loading" class="button" type="submit">
+          Salvar
+        </button>
+      </div>
+    </form>
   </div>
-  
+</div>

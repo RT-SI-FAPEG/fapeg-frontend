@@ -26,9 +26,7 @@ $gap: 30px;
         color: var(--secondary-900) !important;
 
         select {
-          padding: 15px;
           border-radius: 10px;
-          border: 1px solid var(--neutral-900);
           color: var(--neutral-900);
         }
       }
@@ -39,11 +37,11 @@ $gap: 30px;
         gap: 1rem;
       }
 
-      @media (max-width: 768px) {
-        .input_container {
-          flex: 1 0 100%;
-        }
-      }
+      // @media (max-width: 768px) {
+      //   .input_container {
+      //     flex: 1 0 100%;
+      //   }
+      // }
     }
 
     .container-button {
@@ -77,4 +75,11 @@ p {
   margin-bottom: 10px;
   margin-top: 10px;
   text-align: center;
+}
+
+.back-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
 }

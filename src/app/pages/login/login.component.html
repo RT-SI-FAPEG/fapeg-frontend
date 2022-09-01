@@ -14,22 +14,37 @@
       <form [formGroup]="loginForm" (submit)="onSubmit()">
         <label class="input_container">
           Usuário
-          <input type="text" formControlName="email"/>
+          <div class="input_container_wrapper">
+            <input class="input_element" type="text" formControlName="email" />
+          </div>
         </label>
 
         <label class="input_container">
           Senha
-          <div class="input_div">
-            <input type="{{ showPassword ? 'text' : 'password' }}" formControlName="password"/>
-            <button (click)="passwordVisibility()" type="button"><span class="material-icons"> visibility </span></button>
+          <div class="input_container_wrapper">
+            <input
+              type="{{ showPassword ? 'text' : 'password' }}"
+              formControlName="password"
+              class="input_element"
+            />
+            <button
+              class="input_button"
+              (click)="passwordVisibility()"
+              type="button"
+            >
+              <span class="material-icons"> visibility </span>
+            </button>
           </div>
         </label>
 
-        <button [disabled]="loading" class="button" type="submit">{{ loading ? 'Processando...' : 'Entrar' }}</button>
+        <button [disabled]="loading" class="button" type="submit">
+          {{ loading ? "Processando..." : "Entrar" }}
+        </button>
 
         <div>
           <span class="password_link"
-            >Esqueceu a senha? <a routerLink="/forgetPassword">Clique aqui</a></span
+            >Esqueceu a senha?
+            <a routerLink="/forgetPassword">Clique aqui</a></span
           >
           <span class="password_link"
             >Não tem conta? <a routerLink="/register">Cadastre-se aqui</a></span

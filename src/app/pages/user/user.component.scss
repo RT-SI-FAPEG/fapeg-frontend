@@ -1,56 +1,57 @@
 $gap: 30px;
 .container {
-    max-width: 917px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
+  max-width: 917px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
 
-    .user-container {
-        padding: 1.5rem 2rem;
+  .user-container {
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 22px;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+    color: #a8a8b3;
+    font-size: 2rem;
+  }
+
+  .container-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+
+    .input_container {
+      flex: 0 46%;
+      color: #1e1e1e !important;
+
+      select {
+        // padding: 15px;
+        border-radius: 10px;
+        // border: 1px solid var(--neutral-900);
+        color: var(--neutral-900);
         background-color: #fff;
-        border-radius: 12px;
-        margin-top: 22px;
-    }
-
-    .title {
-        margin-bottom: 1.5rem;
-        color: #A8A8B3;
-        font-size: 2rem;
-    }
-
-    .container-inputs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: $gap;
-  
-        .input_container {
-          flex:  0 46%;
-          color: #1e1e1e !important;
-  
-          select {
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid var(--neutral-900);
-            color: var(--neutral-900);
-          }
-        }
-  
-        .container-type-person {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-        }
-    }
-    .container-button {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: 42px;
-  
-        .button {
-          // flex: 1 0 ;
-          max-width: calc(46% + $gap);
-          width: 100%;
-        }
       }
+    }
+
+    .container-type-person {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  .container-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 42px;
+
+    .button {
+      // flex: 1 0 ;
+      max-width: calc(46% + $gap);
+      width: 100%;
+    }
+  }
 }
