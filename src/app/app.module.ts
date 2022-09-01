@@ -22,6 +22,7 @@ import { IndicatorsService } from './services/indicators.service';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { SearchComponent } from './pages/search/search.component';
 import { UserComponent } from './pages/user/user.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent, SidebarComponent, MainLayoutComponent, RegisterComponent, LoginComponent, DashboardComponent, SearchsComponent, LogoutComponent, SearchComponent, UserComponent],
@@ -32,6 +33,7 @@ import { UserComponent } from './pages/user/user.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule,
     NgxMaskModule.forRoot()
   ],
   providers: [LoginService, UserService, SearchesService, IndicatorsService],

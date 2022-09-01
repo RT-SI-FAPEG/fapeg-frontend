@@ -10,9 +10,9 @@ export class SearchesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getSearchs() {
+  getSearchs(page: number) {
     return this.httpClient.get(
-      `${this.apiURL}/searches?page=${1}&perPage=${2355}`,
+      `${this.apiURL}/searches?page=${page}&perPage=${10}`,
       {
         headers: new HttpHeaders().set(
           'Authorization',
