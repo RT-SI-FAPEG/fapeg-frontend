@@ -1,34 +1,34 @@
 .search-container {
-    max-width: 917px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
+  max-width: 917px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .search-card {
-    padding: 1.5rem 2rem;
-    background-color: #fff;
-    border-radius: 12px;
-    margin-top: 22px;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  margin-top: 22px;
 
-    h2 {
-        margin-bottom: 15px;
-    }
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  span {
+    color: #737380;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
 
     span {
-        color: #737380;
-        font-weight: 700;
-        font-size: 20px;
-        margin-bottom: 10px;
-
-        span {
-            font-weight: 400;
-        }
+      font-weight: 400;
     }
+  }
 }
 
 .title {
-    margin-bottom: 1.5rem;
-    color: #A8A8B3;
-    font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #a8a8b3;
+  font-size: 2rem;
 }

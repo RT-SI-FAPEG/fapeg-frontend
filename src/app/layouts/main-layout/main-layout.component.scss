@@ -4,7 +4,8 @@
 
 .pages {
   flex: 1;
-  overflow: auto;
-  height: 100vh;
   background-color: var(--secondary-900);
+
+  height: 100vh;
+  overflow: auto;
 }

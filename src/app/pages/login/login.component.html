@@ -32,8 +32,11 @@
               (click)="passwordVisibility()"
               type="button"
             >
-              <span class="material-icons"> visibility </span>
+              <span class="material-icons">
+                {{ showPassword ? "visibility_off" : "outline_visibility" }}
+              </span>
             </button>
+            <span></span>
           </div>
         </label>
 
