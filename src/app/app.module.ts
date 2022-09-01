@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,12 +20,26 @@ import { SearchesService } from './services/seachs.service';
 import { SearchsComponent } from './pages/searchs/searchs.component';
 import { IndicatorsService } from './services/indicators.service';
 import { LogoutComponent } from './pages/logout/logout.component';
-import { SearchComponent } from './pages/search/search.component';
+import { SearchComponent } from './pages/search/SearchComponent';
 import { UserComponent } from './pages/user/user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, LoginComponent, ForgetPasswordComponent, SidebarComponent, MainLayoutComponent, RegisterComponent, LoginComponent, DashboardComponent, SearchsComponent, LogoutComponent, SearchComponent, UserComponent],
+  declarations: [
+    AppComponent,
+    ButtonComponent,
+    LoginComponent,
+    ForgetPasswordComponent,
+    SidebarComponent,
+    MainLayoutComponent,
+    RegisterComponent,
+    LoginComponent,
+    DashboardComponent,
+    SearchsComponent,
+    LogoutComponent,
+    SearchComponent,
+    UserComponent,
+  ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -34,7 +48,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
   ],
   providers: [LoginService, UserService, SearchesService, IndicatorsService],
   bootstrap: [AppComponent],

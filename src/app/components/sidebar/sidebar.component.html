@@ -1,54 +1,53 @@
 <div class="sidebar">
-    <div class="logo">
-        <img
-        width="297px"
-        height="auto"
-        src="../../../assets/logo-interna.png"
-        alt="Observatório FAPEG"
-        class="logo"
-      />
-    </div>
+  <div>
+    <img
+      width="297px"
+      height="auto"
+      src="../../../assets/logo-interna.png"
+      alt="Observatório FAPEG"
+      class="logo"
+    />
+
     <ul>
-        <li>
-            <a routerLink="/dashboard">
-                <span class="material-icons">
-                    home
-                </span>
-                <span class="link_name">Home</span>
-            </a>
-        </li>
-        
-        <li>
-            <a routerLink="">
-                <span class="material-icons"> group </span>
-                <span class="link_name">Cases de Sucesso</span>
-            </a>
-        </li>
+      <li class="menu-item">
+        <a class="menu-link" routerLink="/dashboard">
+          <span class="material-icons"> home </span>
+          <span class="link_name">Home</span>
+        </a>
+      </li>
 
-        <li>
-            <a routerLink="/searches">
-                <span class="material-icons"> search </span>
-                <span class="link_name">Pesquisas</span>
-            </a>
-        </li>
+      <li class="menu-item">
+        <a class="menu-link" routerLink="/dashboard">
+          <span class="material-icons"> group </span>
+          <span class="link_name">Cases de Sucesso</span>
+        </a>
+      </li>
 
-        <li>
-            <a routerLink="">
-                <span class="material-icons"> perm_contact_calendar </span>
-                <span class="link_name">Fale Conosco</span>
-            </a>
-        </li>
+      <li class="menu-item">
+        <a class="menu-link" routerLink="/searches">
+          <span class="material-icons"> search </span>
+          <span class="link_name">Pesquisas</span>
+        </a>
+      </li>
+
+      <li class="menu-item">
+        <a class="menu-link" routerLink="/dashboard">
+          <span class="material-icons"> perm_contact_calendar </span>
+          <span class="link_name">Fale Conosco</span>
+        </a>
+      </li>
     </ul>
+  </div>
 
-    <div class="profile_content">
-        <div class="profile">
-            <div class="profile_icon">
-                <span class="material-icons"> person </span>
-            </div>
-            <div class="profile_links">
-                <a routerLink="/user" class="profile-hyperlink">Meu Perfil</a>
-                <a routerLink="logout">Sair</a>
-            </div>
-        </div>
+  <div class="profile_content">
+    <div class="profile">
+      <div class="profile_icon">
+        <span class="material-icons"> person </span>
+      </div>
+      <div class="profile_links">
+        <a routerLink="/user" class="profile-hyperlink">Meu Perfil</a>
+        <a routerLink="logout">Sair</a>
+      </div>
     </div>
+  </div>
 </div>
