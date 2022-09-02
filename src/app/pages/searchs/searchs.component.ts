@@ -45,7 +45,7 @@ export class SearchsComponent implements OnInit {
             this.searches = searches.data
             this.totalItems = searches.total
             this.currentPage = searches.page
-            document.querySelector('#listStart')!.scrollIntoView()
+            document.querySelector('#searchContainer')!.scrollIntoView()
           },
           (err) => {
             console.log(err);

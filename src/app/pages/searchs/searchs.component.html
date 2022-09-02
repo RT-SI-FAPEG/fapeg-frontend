@@ -1,4 +1,4 @@
-<div class="searchs-container">
+<div id="searchContainer" class="searchs-container">
     <h1 class="title">Pesquisas fomentadas pela FAPEG</h1>
     <div class="searchs-filter">
 
@@ -15,7 +15,8 @@
             </span>
             <button (click)="showSearchDetails(search)" type="button" class="showDetails">Ver Detalhes</button>
         </div>
-        <pagination-controls 
+        <pagination-controls
+            class="pagination"
             (pageChange)="getPage($event)"
             previousLabel="Anterior"
             nextLabel="Próximo"
