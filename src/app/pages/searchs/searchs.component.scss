@@ -31,6 +31,22 @@
       background-color: #fff;
     }
   }
+
+  .pagination ::ng-deep .ngx-pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center !important;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .pagination ::ng-deep .ngx-pagination a:hover, .ngx-pagination button:hover {
+    background: #d4d4d4;
+    border-radius: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    text-decoration: none;
+  }
 }
 
 .title {

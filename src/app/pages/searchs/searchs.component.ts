@@ -11,7 +11,7 @@ export class SearchsComponent implements OnInit {
   searches: any[] = [];
   currentPage = 1
   totalItems?: number
-  maxSize = 5
+  maxSize = 9
   autoHide = true
   responsive = true
 
@@ -45,7 +45,7 @@ export class SearchsComponent implements OnInit {
             this.searches = searches.data
             this.totalItems = searches.total
             this.currentPage = searches.page
-            window.scrollTo(0, 0)
+            document.querySelector('#listStart')!.scrollIntoView()
           },
           (err) => {
             console.log(err);

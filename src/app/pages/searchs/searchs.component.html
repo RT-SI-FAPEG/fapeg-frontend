@@ -1,49 +1,28 @@
 <div class="searchs-container">
-  <h1 class="title">Pesquisas fomentadas pela FAPEG</h1>
+    <h1 class="title">Pesquisas fomentadas pela FAPEG</h1>
+    <div class="searchs-filter">
 
-  <div class="searchs-filter"></div>
-
-  <div class="searchs-list">
-    <div
-      *ngFor="
-        let search of searches
-          | paginate
-            : {
-                itemsPerPage: 10,
-                currentPage: currentPage,
-                totalItems: totalItems
-              }
-      "
-      class="list-card"
-    >
-      <h2>{{ search.nme_titulo_projeto }}</h2>
-      <span>
-        Pesquisador:
-        <p>{{ search.nme_pessoa_fisica }}</p>
-      </span>
-      <span>
-        Resumo:
-        <p>{{ search.nme_titulo_projeto }}</p>
-      </span>
-      <button
-        (click)="showSearchDetails(search)"
-        type="button"
-        class="showDetails"
-      >
-        Ver Detalhes
-      </button>
     </div>
-
-    <div class="pagination-container">
-      <pagination-controls
-        (pageChange)="getPage($event)"
-        previousLabel="Anterior"
-        nextLabel="Próximo"
-        [maxSize]="maxSize"
-        [autoHide]="autoHide"
-        [responsive]="responsive"
-      >
-      </pagination-controls>
+    <div class="searchs-list">
+        <div *ngFor="let search of searches  | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }" class="list-card">
+            <h2>{{ search.nme_titulo_projeto }}</h2>
+            <span>
+                Pesquisador: <p>{{ search.nme_pessoa_fisica }}</p> 
+            </span>
+            <span>
+                Resumo:
+                <p>{{ search.nme_titulo_projeto }}</p>
+            </span>
+            <button (click)="showSearchDetails(search)" type="button" class="showDetails">Ver Detalhes</button>
+        </div>
+        <pagination-controls 
+            (pageChange)="getPage($event)"
+            previousLabel="Anterior"
+            nextLabel="Próximo"
+            [maxSize]="maxSize"
+            [autoHide]="autoHide"
+            [responsive]="responsive"
+        >
+        </pagination-controls>
     </div>
-  </div>
 </div>
