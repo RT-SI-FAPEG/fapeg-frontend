@@ -28,4 +28,11 @@ export class UserService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
     });
   }
+
+  deleteUser(userId: string) {
+    return this.httpClient.delete(`${this.apiURL}/user/${userId}`,
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    });
+  }
 }

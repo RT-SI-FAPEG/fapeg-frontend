@@ -45,13 +45,23 @@ $gap: 30px;
   .container-button {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-top: 42px;
 
     .button {
       // flex: 1 0 ;
+
       max-width: calc(46% + $gap);
       width: 100%;
+    }
+
+    .deleteAccount {
+      color: red;
+      border: none;
+      cursor: pointer;
+      background-color: #fff;
+      font-size: 16px;
+      margin-left: 10px;
     }
   }
 }

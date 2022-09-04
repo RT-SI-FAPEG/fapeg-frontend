@@ -64,6 +64,9 @@ export class UserComponent implements OnInit {
       (err) => {
         this.loading = false
         console.log(err)
+        if(err.error) {
+          alert(err.error.error)
+        }
       }
     )
   }
@@ -79,4 +82,21 @@ export class UserComponent implements OnInit {
     this.userForm.patchValue({ typePerson: user.typePerson })
   }
 
+  deleteAccount() {
+    const result = prompt('ATENÇÃO! Essa ação NÃO pode ser desfeita. Digite EXCLUIR para confirmar a exclusão da conta.')
+    if (result && result.toLowerCase() == 'excluir') {
+      this.userService.deleteUser(this.user!.id!).subscribe(
+        () => {
+          alert('Conta excluída com sucesso.')
+          localStorage.removeItem('token')
+          localStorage.removeItem('userId')
+          window.location.reload()
+        },
+        (err) => {
+          alert('Não foi possível deletar o usuário no momento. Por favor, tente novamente mais tarde')
+          console.error(err)
+        }
+      )
+    }
+  }
 }
