@@ -71,19 +71,6 @@
         </label>
 
         <label class="input_container">
-          CPF
-          <div class="input_container_wrapper">
-            <input
-              formControlName="document"
-              mask="000.000.000-00"
-              type="text"
-              placeholder="001.001.001-01"
-              class="input_element"
-            />
-          </div>
-        </label>
-
-        <label class="input_container">
           Grau de Instrução
           <div class="input_container_wrapper">
             <select
@@ -125,8 +112,10 @@
           </div>
         </label>
       </div>
-
       <div class="container-button">
+        <button (click)="deleteAccount()" type="button" class="deleteAccount">
+          Excluir Conta
+        </button>
         <button [disabled]="loading" class="button" type="submit">
            {{ loading ? 'Processando...' : 'Salvar' }}
         </button>
