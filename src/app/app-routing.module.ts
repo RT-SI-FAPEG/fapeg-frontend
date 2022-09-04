@@ -10,6 +10,7 @@ import { SearchComponent } from './pages/search/SearchComponent';
 import { SearchsComponent } from './pages/searchs/searchs.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { UserComponent } from './pages/user/user.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'searches', component: SearchsComponent },
       { path: 'search', component: SearchComponent },
       { path: 'user', component: UserComponent },
+      { path: 'contactUs', component: ContactUsComponent }
     ],
   },
   { path: 'login', component: LoginComponent },

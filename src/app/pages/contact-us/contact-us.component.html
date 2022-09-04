@@ -1,0 +1,35 @@
+<div class="contactUs-container">
+    <h1 class="title">Formulário de Contato</h1>
+    <form [formGroup]="userForm" (submit)="onSubmit()" class="contactUs-form">
+        <label class="input_container">
+            Assunto
+            <div class="input_container_wrapper">
+              <input
+                formControlName="subject"
+                type="text"
+                placeholder="Assunto a ser tratado com a FAPEG..."
+                class="input_element"
+              />
+            </div>
+          </label>
+
+          <label class="input_container">
+            Mensagem
+              <textarea 
+                name=""
+                id="" 
+                cols="30" 
+                rows="10"
+                formControlName="message"
+                placeholder="Sua Mensagem..."
+                class="textArea_element"
+              ></textarea>
+          </label>
+
+          <div class="container-button">
+            <button [disabled]="loading" class="button" type="submit">
+              {{ loading ? "Processando..." : "Enviar" }}
+            </button>
+          </div>
+    </form>
+</div>

@@ -23,6 +23,7 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { SearchComponent } from './pages/search/SearchComponent';
 import { UserComponent } from './pages/user/user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     LogoutComponent,
     SearchComponent,
     UserComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
