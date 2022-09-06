@@ -15,6 +15,25 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    let cc = window as any;
+    cc.cookieconsent.initialise({
+      palette: {
+        popup: {
+          background: "#fff"
+        },
+        button: {
+          background: "#333",
+          text: "#fff"
+        }
+      },
+      theme: "classic",
+      content: {
+        message: "Esse site faz uso de cookies para melhorar ainda mais sua experiência | ",
+        dismiss: "Entendi",
+        link: "Política de Privacidade"
+      }
+    });
+
     this.indicatorsService.getIndicators()
       .subscribe(
         (indicators) => {
@@ -23,7 +42,7 @@ export class DashboardComponent implements OnInit {
         (err) => {
           console.log(err)
         }
-      )
+    )
   }
 
 }
