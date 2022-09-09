@@ -1,0 +1,41 @@
+.successStories-container {
+    max-width: 917px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  
+    .list-card {
+      padding: 1.5rem 2rem;
+      background-color: #fff;
+      border-radius: 12px;
+      margin-top: 22px;
+  
+      h2 {
+        margin-bottom: 29px;
+      }
+  
+      span {
+        color: #737380;
+        font-weight: 700;
+        font-size: 20px;
+  
+        p {
+          font-weight: 400;
+        }
+      }
+  
+      .showDetails {
+        color: red;
+        border: none;
+        cursor: pointer;
+        background-color: #fff;
+      }
+    }
+  }
+  
+  .title {
+    margin-bottom: 1.5rem;
+    color: var(--primary-900);
+    font-size: 2rem;
+  }
+  

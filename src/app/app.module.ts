@@ -20,10 +20,11 @@ import { SearchesService } from './services/seachs.service';
 import { SearchsComponent } from './pages/searchs/searchs.component';
 import { IndicatorsService } from './services/indicators.service';
 import { LogoutComponent } from './pages/logout/logout.component';
-import { SearchComponent } from './pages/search/SearchComponent';
+import { SearchComponent } from './pages/search/search.component';
 import { UserComponent } from './pages/user/user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { SuccessStoriesComponent } from './pages/success-stories/success-stories.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     SearchComponent,
     UserComponent,
     ContactUsComponent,
+    SuccessStoriesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<div id="searchContainer" class="successStories-container">
+    <h1 class="title">Histórias de Sucesso</h1>
+    <div class="searchs-filter">
+
+    </div>
+    <div class="searchs-list">
+        <div *ngFor="let successStory of sucessStories" class="list-card">
+            <h2>{{ successStory.title }}</h2>
+            <span>
+                Resumo:
+                <p>{{ successStory.description }}</p>
+            </span>
+        </div>
+    </div>
+</div>
