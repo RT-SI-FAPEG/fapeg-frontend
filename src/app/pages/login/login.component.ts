@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
+    private userService: UserService,
     private router: Router,
     private activedRoute: ActivatedRoute
   ) {
@@ -29,7 +31,19 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.token)
+    if(this.token) {
+      this.userService.activeUser(this.token).subscribe(
+        () => {
+          alert('Conta ativada com sucesso. Faça login para acessar a plataforma.')
+        }, 
+        (err) => {
+          if(err.error) {
+            alert(err.error.error)
+          }
+          console.log(err)
+        }
+      )
+    }
   }
 
   onSubmit() {
