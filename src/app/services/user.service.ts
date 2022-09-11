@@ -35,4 +35,12 @@ export class UserService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
     });
   }
+
+  activeUser(token: string) {
+    return this.httpClient.post(`${this.apiURL}/user/activate`, 
+    { token },
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    });
+  }
 }
