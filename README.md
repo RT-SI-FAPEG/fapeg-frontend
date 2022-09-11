@@ -1,27 +1,29 @@
-# FapegFrontend
+# Observatório FAPEG - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+## Sobre o projeto
 
-## Development server
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 14.0.3, e angular na versão 14.0.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Como executar este projeto
 
-## Code scaffolding
+* Instalar as dependências com `npm i / npm install` ou `yarn / yarn install`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Scripts da aplicação:
+    - `npm run dev` ou `yarn dev` para executar o projeto em ambiente de testes, navagando até a url `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
+    - `npm run build` ou `yarn build` para executar o build da aplicação;
+    - `npm run start` ou `yarn start` para executar a aplicação em ambiente de produção;
+    - `npm run test` ou `yarn test` para executar os testes da aplicação;
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Sobre a arquitetura do projeto
 
-## Running unit tests
+A arquitetura do projeto é bem simples, utilizando uma estruturação de pastas ocorre dentro da pasta src de forma básica:
+ - `components`: Contém os componentes utilizados pela aplicação.
+ - `layouts`: Contém os layouts utilizados pela aplicação(contém o main latoyout da aplicação)
+ - `models`: Contém os modelos/entidades que são utilizados/compartilhados pela aplicação.
+ - `pages`: Contém as páginas da aplicação.
+ - `services`: Contém os services da aplicação, que em suma vão comunicar com a api ou com algum serviço externo caso necessário.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Arquivo `environments`
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A pasta 'environments' que fica dentro de 'src' contém as variáveis de ambiente necessárias para rodar a aplicação, tanto em ambiente de teste como também em produção.
