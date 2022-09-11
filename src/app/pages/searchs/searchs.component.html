@@ -1,7 +1,25 @@
 <div id="searchContainer" class="searchs-container">
     <h1 class="title">Pesquisas fomentadas pela FAPEG</h1>
     <div class="searchs-filter">
-
+        <label class="input_container search-input">
+            Pesquisa
+            <div class="input_container_wrapper">
+              <input [(ngModel)]="filter" class="input_element" type="text" placeholder="Alan Turing..."/>
+            </div>
+        </label>
+        <label class="input_container filter-select">
+            Filtros
+            <div class="input_container_wrapper">
+              <select [(ngModel)]="filterSelect" class="input_element">
+                <option value="">Todos</option>
+                <option value="nme_pessoa_fisica">Pesquisador</option>
+                <option value="nme_programa_fomento">Programa de Fomento</option>
+              </select>
+            </div>
+        </label>
+        <button (click)="searchItem(filter, filterSelect)" class="button" type="button">
+            Pesquisar
+        </button>
     </div>
     <div class="searchs-list">
         <div *ngFor="let search of searches  | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalItems }" class="list-card">

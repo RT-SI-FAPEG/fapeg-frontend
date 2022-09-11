@@ -4,6 +4,27 @@
   margin: 0 auto;
   padding: 1rem;
 
+  .searchs-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .filter-select {
+      flex: 1;
+      margin-right: 18px;
+    }
+
+    .search-input {
+      flex: 2;
+      margin-right: 18px;
+    }
+
+    button {
+      flex: 1;
+      margin-top: 31px;
+    }
+  }
+
   .list-card {
     padding: 1.5rem 2rem;
     background-color: #fff;

@@ -8,7 +8,9 @@ import { SearchesService } from 'src/app/services/seachs.service';
   styleUrls: ['./searchs.component.scss'],
 })
 export class SearchsComponent implements OnInit {
-  searches: any[] = [];
+  searches: any[] = []
+  filter = ""
+  filterSelect = ""
   currentPage = 1
   totalItems?: number
   maxSize = 9
@@ -53,4 +55,22 @@ export class SearchsComponent implements OnInit {
         )
     }
   }
+
+  searchItem(filter: string, filterSelect: string) {
+    console.log(filter, filterSelect)
+    this.seachsService.getSearchs(1, { key: filterSelect, value: filter })  
+      .subscribe(
+        (searches: any) => {
+          console.log(searches)
+          this.searches = searches.data
+          this.totalItems = searches.total
+          this.currentPage = searches.page
+          document.querySelector('#searchContainer')!.scrollIntoView()
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
+  }
+
 }
