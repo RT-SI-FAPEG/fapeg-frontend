@@ -43,4 +43,20 @@ export class UserService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
     });
   }
+
+  updatePassword(newPassword: string, token: string) {
+    return this.httpClient.put(`${this.apiURL}/user/password`, 
+    { newPassword, token },
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    });
+  }
+
+  sendEmailtoChangePassword(email: string) {
+    return this.httpClient.post(`${this.apiURL}/user/send-reset-password-mail`, 
+    { email },
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    });
+  }
 }

@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'login/:token', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgetPassword', component: ForgetPasswordComponent },
+  { path: 'forgetPassword/:token', component: ForgetPasswordComponent },
   { path: 'logout', component: LogoutComponent },
 ];
 
