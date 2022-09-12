@@ -16,6 +16,7 @@ export class SearchsComponent implements OnInit {
   maxSize = 9
   autoHide = true
   responsive = true
+  itemSearched = false
 
   constructor(private seachsService: SearchesService, private router: Router) {}
 
@@ -41,7 +42,12 @@ export class SearchsComponent implements OnInit {
 
   getPage($event: any)  {
     if($event != this.currentPage) {
-      this.seachsService.getSearchs($event)
+      const filter = { key: '', value: '' }
+      if(this.itemSearched && this.filter.length && this.filterSelect) {
+        filter.key = this.filterSelect
+        filter.value = this.filter
+      }
+      this.seachsService.getSearchs($event, filter)
         .subscribe(
           (searches: any) => {
             this.searches = searches.data
@@ -65,6 +71,7 @@ export class SearchsComponent implements OnInit {
           this.searches = searches.data
           this.totalItems = searches.total
           this.currentPage = searches.page
+          this.itemSearched = true
           document.querySelector('#searchContainer')!.scrollIntoView()
         },
         (err) => {

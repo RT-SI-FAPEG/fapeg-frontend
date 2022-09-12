@@ -13,7 +13,7 @@ export class SearchesService {
   getSearchs(page: number, filter?: { key: string, value: string }) {
     console.log(filter)
     return this.httpClient.post(
-      `${this.apiURL}/searches?page=${page}&perPage=${10}`, filter,
+      `${this.apiURL}/searches?page=${page}&perPage=${10}`, { filter },
       {
         headers: new HttpHeaders().set(
           'Authorization',
