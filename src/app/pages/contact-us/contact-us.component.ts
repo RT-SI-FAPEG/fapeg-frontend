@@ -35,6 +35,7 @@ export class ContactUsComponent implements OnInit {
       (response) => {
         this.loading = false 
         alert("Mensagem enviada com sucesso!")
+        this.userForm.reset()
       },
       (err) => {
         if(err.error) {
