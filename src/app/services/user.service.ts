@@ -59,4 +59,12 @@ export class UserService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
     });
   }
+
+  contactUs(data: { email: string, subject: string, text: string }) {
+    return this.httpClient.post(`${this.apiURL}/contact`, 
+    { email: data.email, subject: data.subject, text: data.subject },
+    {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')!}`)
+    });
+  }
 }
